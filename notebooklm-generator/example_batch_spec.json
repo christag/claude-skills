@@ -1,0 +1,79 @@
+{
+  "lessons": [
+    {
+      "topic": "Sandwich Making",
+      "learning_areas": [
+        "bread selection",
+        "proteins and meats",
+        "cheeses",
+        "vegetables and toppings"
+      ],
+      "listener_context": {
+        "knows": [
+          "basic cooking techniques",
+          "food safety",
+          "kitchen equipment"
+        ],
+        "wants_to_learn": [
+          "gourmet sandwich techniques",
+          "ingredient pairing",
+          "professional presentation"
+        ],
+        "skill_level": "intermediate",
+        "goal": "Create restaurant-quality sandwiches at home"
+      },
+      "target_sources": 15
+    },
+    {
+      "topic": "Firewall Deep Packet Inspection",
+      "learning_areas": [
+        "DPI fundamentals",
+        "implementation techniques",
+        "performance optimization",
+        "privacy and compliance"
+      ],
+      "listener_context": {
+        "knows": [
+          "TCP/IP networking",
+          "basic firewall concepts",
+          "ACLs and routing",
+          "port forwarding"
+        ],
+        "wants_to_learn": [
+          "how DPI actually works",
+          "DPI vs stateful inspection",
+          "real-world implementations",
+          "performance tuning"
+        ],
+        "skill_level": "advanced",
+        "goal": "Evaluate and implement DPI solutions for enterprise network"
+      },
+      "target_sources": 18
+    },
+    {
+      "topic": "Docker Container Optimization",
+      "learning_areas": [
+        "image size reduction",
+        "multi-stage builds",
+        "layer caching",
+        "security best practices"
+      ],
+      "listener_context": {
+        "knows": [
+          "Docker basics",
+          "Dockerfile syntax",
+          "container deployment"
+        ],
+        "wants_to_learn": [
+          "production-ready optimizations",
+          "CI/CD integration",
+          "security hardening",
+          "debugging techniques"
+        ],
+        "skill_level": "intermediate",
+        "goal": "Build efficient, secure containers for production deployment"
+      },
+      "target_sources": 15
+    }
+  ]
+}
