@@ -1,0 +1,21 @@
+{
+  "sources": [
+    "https://example.com/article1",
+    "https://example.com/article2",
+    "https://example.com/blog-post"
+  ],
+  "audio_overviews": [
+    {
+      "prompt": "Focus on the key technical concepts and explain them in detail for a developer audience",
+      "length": "longer"
+    },
+    {
+      "prompt": "Create a high-level executive summary highlighting business impacts and ROI",
+      "length": "default"
+    },
+    {
+      "prompt": "Explain the content as if teaching to someone new to the field, using simple analogies",
+      "length": "longer"
+    }
+  ]
+}

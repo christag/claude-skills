@@ -1,8 +1,8 @@
-# NotebookLM Creator Skill - Usage Guide
+# NotebookLM Lesson Planner Skill - Usage Guide
 
 ## Overview
 
-The NotebookLM Creator skill helps you build comprehensive, structured learning content for Google NotebookLM. It automates the process of finding quality sources, validating their accessibility, and creating tailored prompts for audio overview generation.
+The NotebookLM Lesson Planner skill helps you build comprehensive, structured learning content for Google NotebookLM. It automates the process of finding quality sources, validating their accessibility, and creating tailored prompts for audio overview generation.
 
 ## What You Get
 
@@ -76,7 +76,7 @@ Create a JSON file with your lesson specifications (see example_batch_spec.json)
 
 ### Step 2: Process with Claude
 
-"Use the NotebookLM Creator skill in batch mode to process this specification file."
+"Use the NotebookLM Lesson Planner skill in batch mode to process this specification file."
 
 ### Step 3: Get Results
 
@@ -90,7 +90,7 @@ The skill is designed to work seamlessly with Claude Code for large-scale proces
 
 ```bash
 # Process batch specification
-claude-code "Use the notebooklm-creator skill to process batch_spec.json 
+claude-code "Use the notebooklm-lesson-planner skill to process batch_spec.json 
 and create lesson plans for all topics"
 ```
 

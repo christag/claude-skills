@@ -1,4 +1,4 @@
-# NotebookLM Creator Skill - Summary
+# NotebookLM Lesson Planner Skill - Summary
 
 ## What Was Created
 
@@ -7,7 +7,7 @@ A complete Claude skill for generating Google NotebookLM lesson plans with valid
 ## Files Created
 
 ### Core Skill Package
-**Location**: `/mnt/user-data/outputs/notebooklm-creator.zip`
+**Location**: `/mnt/user-data/outputs/notebooklm-lesson-planner.zip`
 
 **Contents**:
 - `SKILL.md` - Main skill documentation (workflow, guidelines, best practices)
@@ -24,7 +24,7 @@ A complete Claude skill for generating Google NotebookLM lesson plans with valid
 ## How to Use
 
 ### Option 1: Install in Claude Chat
-1. Download `notebooklm-creator.zip`
+1. Download `notebooklm-lesson-planner.zip`
 2. Go to Claude.ai Settings → Skills
 3. Upload the skill zip file
 4. Start using it in new conversations
@@ -169,7 +169,7 @@ The skill is designed to be low-maintenance:
 ## File Locations
 
 All outputs are in `/mnt/user-data/outputs/`:
-- ✅ `notebooklm-creator.zip` - The skill package
+- ✅ `notebooklm-lesson-planner.zip` - The skill package
 - ✅ `USAGE_GUIDE.md` - How to use the skill
 - ✅ `example_batch_spec.json` - Batch processing example
 

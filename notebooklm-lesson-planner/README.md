@@ -1,4 +1,4 @@
-# NotebookLM Creator Skill 
+# NotebookLM Lesson Planner Skill 
 
 **What's inside**:
 - ✅ SKILL.md - Complete workflow and guidelines
@@ -22,7 +22,7 @@
 ### Install the Skill
 
 **Option A: Claude.ai (Web/Mobile/Desktop)**
-1. Download `notebooklm-creator.zip`
+1. Download `notebooklm-lesson-planner.zip`
 2. Go to Settings → Skills
 3. Click "Upload Skill"
 4. Select the zip file
@@ -30,7 +30,7 @@
 
 **Option B: Claude Code**
 1. Extract the zip to your skills directory
-2. Use via SSH: `claude-code "use notebooklm-creator skill..."`
+2. Use via SSH: `claude-code "use notebooklm-lesson-planner skill..."`
 
 ### Create Your First Lesson
 
@@ -303,7 +303,7 @@ After using this skill, you'll be able to:
 ## 📞 Next Steps
 
 ### 1. Install the Skill
-Download and install `notebooklm-creator.zip`
+Download and install `notebooklm-lesson-planner.zip`
 
 ### 2. Try a Test Lesson
 Create a lesson on a topic you know well to see how it works
@@ -327,7 +327,7 @@ Use batch mode for larger projects
 All files are in `/mnt/user-data/outputs/`:
 
 ```
-notebooklm-creator.zip          ← The skill package (install this)
+notebooklm-lesson-planner.zip   ← The skill package (install this)
 USAGE_GUIDE.md                  ← How to use the skill
 EXAMPLE_OUTPUT.md               ← Complete lesson plan example
 SUMMARY.md                      ← Technical overview

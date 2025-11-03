@@ -1,9 +1,9 @@
 ---
-name: notebooklm-creator
+name: notebooklm-lesson-planner
 description: Create structured Google NotebookLM lesson plans with curated sources and tailored audio overview prompts. Use when the user wants to create a NotebookLM notebook, generate learning content with audio overviews, or build a curriculum with multiple focused segments. Handles both single lesson creation and batch processing of multiple topics.
 ---
 
-# NotebookLM Creator
+# NotebookLM Lesson Planner
 
 Create comprehensive lesson plans for Google NotebookLM with validated sources and customized audio overview prompts.
 
@@ -107,29 +107,52 @@ view references/prompt_templates.md
 1. **Topic/Learning Area** - What specific area this overview covers
 2. **Listener Profile** - Who the listener is, what they know, their expertise level
 3. **Coverage Scope** - What this overview should cover in detail
-4. **Exclusions** - Critical! What NOT to cover (handled by other overviews)
-5. **Approach Guidance** - Tone, depth, teaching style
-6. **Additional Context** - Any other relevant information
+4. **Previous Coverage** - What was covered in the last episode (for continuity)
+5. **Upcoming Topics** - What will be covered in future episodes (to avoid going into detail)
+6. **Exclusions** - Critical! What NOT to cover in detail (handled by other overviews)
+7. **Approach and Goals** - Tone, depth, teaching style, and learning objectives
+8. **Length Suggestion** - Duration target: [~15 min] for standard, [~22 min] for longer episodes
+9. **Additional Context** - Any other relevant information
 
-**Exclusion strategy:**
-- Overview 1 excludes: areas 2, 3, 4 (to be covered later)
-- Overview 2 excludes: area 1 (already covered), areas 3, 4 (to be covered later)
-- Overview 3 excludes: areas 1, 2 (already covered), area 4 (to be covered later)
-- Overview 4 excludes: areas 1, 2, 3 (already covered)
+**Exclusion and continuity strategy:**
+- Overview 1: No previous coverage, upcoming: areas 2, 3, 4
+- Overview 2: Previous: area 1, upcoming: areas 3, 4
+- Overview 3: Previous: areas 1-2, upcoming: area 4
+- Overview 4: Previous: areas 1-3, no upcoming topics
 
-This ensures each overview is focused and non-redundant.
+This ensures each overview is focused, non-redundant, and builds on prior knowledge.
 
-### Step 5: Deliver Lesson Plan
+**Case Study Requirement:**
+One audio overview in every lesson MUST be a real-life case study focusing on real companies and their experiences. This overview should analyze actual implementation stories, challenges faced, and lessons learned from real organizations.
+
+### Step 5: Generate Quiz Prompts
+
+For each lesson, create 4 quiz prompts based on the audio overviews. Each quiz prompt should:
+
+1. **Reference the audio overview** - Which overview this quiz is based on
+2. **Specify length** - short, default, or long
+3. **Specify difficulty** - medium or hard
+4. **Guide quiz content** - What topics/concepts to focus on
+
+**Quiz distribution:**
+- Quiz 1: Based on Overview 1 (difficulty: medium, length: default)
+- Quiz 2: Based on Overview 2 (difficulty: medium, length: short)
+- Quiz 3: Based on Overview 3 (difficulty: hard, length: default)
+- Quiz 4: Based on Overview 4 or case study (difficulty: hard, length: long)
+
+### Step 6: Deliver Lesson Plan
 
 Provide the user with:
 
 1. **Complete source list** - All validated URLs with brief descriptions
 2. **Coverage summary** - Which sources cover which learning areas
-3. **Prompts** - One prompt per learning area, numbered and ready to use
-4. **Instructions** - How to use the lesson plan with NotebookLM:
+3. **Audio Overview Prompts** - One prompt per learning area, numbered and ready to use (including length suggestions)
+4. **Quiz Prompts** - Four quiz prompts with length and difficulty specified
+5. **Instructions** - How to use the lesson plan with NotebookLM:
    - Add all sources to NotebookLM notebook
    - For each audio overview, copy the corresponding prompt
    - Generate audio overviews in sequence
+   - Generate quizzes using the quiz prompts
 
 **Output format:**
 
@@ -140,21 +163,39 @@ Provide the user with:
 
 1. [Source 1 Title] - [URL]
    Coverage: [Learning areas covered]
-   
+
 2. [Source 2 Title] - [URL]
    Coverage: [Learning areas covered]
-   
+
 ...
 
 ## Audio Overview Prompts
 
-### Overview 1: [Learning Area 1]
+### Overview 1: [Learning Area 1] [~15 min]
+
+[Full prompt text including: coverage, previous coverage, upcoming topics, approach and goals]
+
+### Overview 2: [Learning Area 2] [~15 min]
 
 [Full prompt text]
 
-### Overview 2: [Learning Area 2]
+### Overview 3: [Case Study] [~22 min]
 
-[Full prompt text]
+[Full prompt text - real-life case study of real companies]
+
+...
+
+## Quiz Prompts
+
+### Quiz 1: [Topic] (Based on Overview 1)
+**Length**: default | **Difficulty**: medium
+
+[Full quiz prompt text]
+
+### Quiz 2: [Topic] (Based on Overview 2)
+**Length**: short | **Difficulty**: medium
+
+[Full quiz prompt text]
 
 ...
 
@@ -166,7 +207,11 @@ Provide the user with:
    - Click "Generate Audio Overview"
    - Copy and paste the corresponding prompt above
    - Generate the overview
-4. Listen to overviews in sequence (1→2→3→...)
+4. For each quiz:
+   - Click "Generate Quiz"
+   - Copy and paste the corresponding quiz prompt
+   - Generate the quiz
+5. Listen to overviews in sequence (1→2→3→...)
 ```
 
 ## Batch Mode
@@ -263,11 +308,23 @@ The batch_summary.md provides an overview of all lessons created.
 - Appropriate depth for listener's expertise level
 
 ### Prompt Quality
-- Each prompt 150-300 words (optimal)
+- Each prompt 200-350 words (optimal with new requirements)
+- Clear previous coverage and upcoming topics sections
 - Clear exclusions to avoid overlap
 - Listener context consistent across all prompts
 - Specific coverage guidance
 - Appropriate tone and depth for audience
+- Length suggestion included ([~15 min] or [~22 min])
+- Approach and goals clearly stated
+- At least one case study overview per lesson
+
+### Quiz Quality
+- 4 quizzes per lesson minimum
+- Each quiz mapped to a specific audio overview
+- Mix of difficulty levels (medium and hard)
+- Mix of lengths (short, default, long)
+- Clear guidance on topics to test
+- Questions should reinforce key concepts from the audio overviews
 
 ### Coverage Balance
 - No learning area should dominate (unless intentional)
